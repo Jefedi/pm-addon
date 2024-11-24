@@ -1,19 +1,24 @@
-# Utiliser une image Node.js légère
-FROM node:16-alpine
+ARG BUILD_FROM=ghcr.io/hassio-addons/base:14.0.3
+# Image de base pour Home Assistant Add-ons
 
-# Créer le dossier de l'application
-WORKDIR /app
+# Définir l'image de base
+FROM ${BUILD_FROM}
+
+# Variables d'environnement
+ENV LANG C.UTF-8
 
 # Copier les fichiers nécessaires
-COPY server/ /app/server/
-COPY public/ /app/public/
+COPY run.sh /
+COPY . /app
 
-# Installer les dépendances
-WORKDIR /app/server
-RUN npm install
+# Installer Node.js et les dépendances
+RUN apk add --no-cache nodejs npm \
+  && cd /app \
+  && npm install
 
-# Exposer le port de l'application
+# Exposer le port 3000
 EXPOSE 3000
 
-# Commande pour démarrer le serveur
-CMD ["node", "server.js"]
+# Points d'entrée
+ENTRYPOINT [ "/run.sh" ]
+CMD []
