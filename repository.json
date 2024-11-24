@@ -1,14 +1,14 @@
 {
   "name": "PM Add-on Repository",
   "url": "https://github.com/Jefedi/pm-addon",
-  "maintainer": "Jefe",
+  "maintainer": "Votre Nom <votre_email@example.com>",
   "source": "https://github.com/Jefedi/pm-addon",
   "addons": [
     {
       "name": "PM Map Add-on",
       "slug": "pm_map_addon",
       "description": "Gérez vos PM sur une carte depuis HA.",
-      "url": "https://github.com/Jefedi/pm-addon",
+      "version": "1.0.0",
       "arch": ["armv7", "arm64", "amd64"],
       "startup": "services",
       "boot": "auto",
@@ -16,7 +16,10 @@
       "ingress": true,
       "ports": {
         "3000/tcp": null
-      }
+      },
+      "map": ["config", "share"],
+      "options": {},
+      "schema": {}
     }
   ]
 }

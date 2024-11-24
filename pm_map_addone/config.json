@@ -13,6 +13,5 @@
   },
   "map": ["config", "share"],
   "options": {},
-  "schema": {},
-  "image": "local/pm_map_addon"
+  "schema": {}
 }
