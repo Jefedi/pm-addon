@@ -1,18 +1,17 @@
 {
-    "name": "PM Map Add-on",
-    "version": "1.0",
-    "slug": "pm_map_addon",
-    "description": "Affichez et gérez les PM sur une carte directement depuis Home Assistant.",
-    "arch": ["armv7", "arm64", "amd64"],
-    "startup": "services",
-    "boot": "auto",
-    "ports": {
-      "3000/tcp": 3333
-    },
-    "webui": "http://[HOST]:[PORT]",
-    "ingress": false,
-    "map": ["config"],
-    "options": {},
-    "schema": {}
-  }
-  
+  "name": "PM Map Add-on",
+  "version": "1.0",
+  "slug": "pm_map_addon",
+  "description": "Gérez vos PM sur une carte directement depuis Home Assistant.",
+  "arch": ["armv7", "arm64", "amd64"],
+  "startup": "services",
+  "boot": "auto",
+  "ports": {
+    "3000/tcp": 3000
+  },
+  "webui": "http://[HOST]:[PORT]",
+  "ingress": false,
+  "map": ["config"],
+  "options": {},
+  "schema": {}
+}
