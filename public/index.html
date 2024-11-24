@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ajouter des PM</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+</head>
+<body>
+  <button id="menu-toggle">☰</button>
+
+  <div id="container">
+    <div id="form-container">
+      <h3>Rechercher un PM</h3>
+      <form id="search-form">
+        <label for="search-term">Numéro ou adresse :</label>
+        <input type="text" id="search-term" name="search-term" />
+        <button type="submit">Chercher</button>
+      </form>
+
+      <button id="center-map-btn">Centrer sur ma position</button>
+
+      <hr>
+
+      <h2>Ajouter un PM</h2>
+      <form id="add-pm-form">
+        <label for="pm-number">Numéro du PM :</label>
+        <input type="text" id="pm-number" name="pm-number" required />
+        <hr>
+        <label for="pm-address">Adresse du PM :</label>
+        <input type="text" id="pm-address" name="pm-address" />
+        <hr>
+        <label for="pm-coordinates">Coordonnées géographiques :</label>
+        <input type="text" id="pm-lat" name="pm-lat" placeholder="Latitude" />
+        <input type="text" id="pm-lng" name="pm-lng" placeholder="Longitude" />
+        <hr>
+        <button type="submit">Ajouter le PM</button>
+      </form>
+    </div>
+
+    <div id="map"></div>
+  </div>
+
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

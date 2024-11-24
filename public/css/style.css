@@ -1,0 +1,69 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  height: 100vh; /* Assurer que le body prend toute la hauteur de l'écran */
+  flex-direction: column;
+}
+
+#container {
+  display: flex;
+  flex-grow: 1;
+  transition: all 0.3s ease-in-out;
+  height: 100%; /* Assurer que container prend toute la hauteur */
+}
+
+#form-container {
+  width: 30%;
+  padding: 20px;
+  background-color: #f4f4f4;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
+  z-index: 10;
+}
+
+#form-container.hidden {
+  transform: translateX(-100%); /* Cache le menu */
+}
+
+#map {
+  flex-grow: 1;
+  height: 100%; /* La carte prend toute la hauteur disponible */
+  width: 100%;  /* La carte prend toute la largeur disponible */
+}
+
+#menu-toggle {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  background-color: #0078d4;
+  color: white;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+  z-index: 10;
+  display: none;
+}
+
+@media (max-width: 768px) {
+  #menu-toggle {
+    display: block; /* Affiche le bouton de menu uniquement sur mobile */
+  }
+
+  #container {
+    flex-direction: column;
+  }
+
+  #form-container {
+    width: 100%; /* Sur mobile, le formulaire prend toute la largeur */
+  }
+
+  #form-container.hidden {
+    display: none; /* Sur mobile, on cache totalement le menu */
+  }
+
+  #map {
+    height: 100%; /* La carte prend toute la hauteur */
+  }
+}
