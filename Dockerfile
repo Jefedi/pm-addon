@@ -13,7 +13,7 @@ WORKDIR /app/server
 RUN npm install
 
 # Exposer le port de l'application
-EXPOSE 3333
+EXPOSE 3000
 
 # Commande pour démarrer le serveur
 CMD ["node", "server.js"]
